@@ -1,0 +1,27 @@
+
+
+Version:	3.50
+CmdLine:	C:\Users\Aylitohh\OneDrive\Documents\Projects\JAVA\sistema-gestion-hotelera\sistema-gestion-hotelera\bin\sistema-gestion-hotelera.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\Aylitohh\OneDrive\Documents\Projects\JAVA\sistema-gestion-hotelera\sistema-gestion-hotelera\bin\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.021.000_007
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Users\Aylitohh\AppData\Local\Programs\Eclipse Adoptium\jdk-21.0.7.6-hotspot\bin;C:\Users\Aylitohh\AppData\Local\Microsoft\WindowsApps;C:\Users\Aylitohh\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Aylitohh\AppData\Local\Programs\Eclipse Adoptium\jdk-21.0.7.6-hotspot\bin
+JRE paths:	;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Users\Aylitohh\AppData\Local\Programs\Eclipse Adoptium\jdk-21.0.7.6-hotspot\bin;C:\Users\Aylitohh\AppData\Local\Microsoft\WindowsApps;C:\Users\Aylitohh\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Aylitohh\AppData\Local\Programs\Eclipse Adoptium\jdk-21.0.7.6-hotspot\bin
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\dotnet\bin\javaw.exe (not found)
+Check launcher:	C:\Users\Aylitohh\AppData\Local\Programs\Eclipse Adoptium\jdk-21.0.7.6-hotspot\bin\javaw.exe (OK)
+Version string: 1.021.000_007 / 64-Bit (OK)
+Launcher:	C:\Users\Aylitohh\AppData\Local\Programs\Eclipse Adoptium\jdk-21.0.7.6-hotspot\bin\javaw.exe
+Launcher args:	-jar "C:\Users\Aylitohh\OneDrive\Documents\Projects\JAVA\sistema-gestion-hotelera\sistema-gestion-hotelera\bin\sistema-gestion-hotelera.exe"
+Args length:	140/32768 chars
+Exit code:	0
