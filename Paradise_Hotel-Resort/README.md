@@ -35,6 +35,7 @@ To run the hotel management system, follow these steps:
    ```
    java src/Main
    ```
+PS: Donwload the .exe file and run it directly by the operative system (Windows).
 
 ## Features
 
