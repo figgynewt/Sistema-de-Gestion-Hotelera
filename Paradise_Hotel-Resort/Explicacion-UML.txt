@@ -1,0 +1,90 @@
+### Explicación del Diagrama UML del Sistema Hotelero
+
+#### **1. Clases Principales y sus Responsabilidades**
+- **`SistemaHotel`**: Clase central que gestiona todas las operaciones.
+  - **Atributos**: Listas de habitaciones, huéspedes, reservas y servicios.
+  - **Métodos clave**: 
+    - `registrarHuesped()`, `realizarReserva()`, `pagarReserva()` (operaciones principales).
+    - `guardarDatos()`/`cargarDatos()` (persistencia, privados).
+- **`Huesped`**: Representa a un cliente.
+  - **Atributos**: ID, nombre, documento, historial de reservas.
+  - **Método**: `agregarReserva()` (vincula reservas al huésped).
+- **`Reserva`**: Gestiona una reserva de habitación.
+  - **Atributos**: Código, fechas, servicios adicionales, factura.
+  - **Métodos**: `agregarServicio()`, `cancelar()`.
+- **`Habitacion`**: Modela una habitación del hotel.
+  - **Atributos**: Número, tipo, estado, precio base.
+  - **Método**: `setEstado()` (cambia estado: DISPONIBLE/OCUPADA/MANTENIMIENTO).
+- **`Factura`**: Administra el pago de una reserva.
+  - **Atributos**: Total, estado de pago (`pagada`), método de pago.
+  - **Métodos**: `agregarCargo()`, `pagar()`.
+- **`ServicioAdicional`**: Servicios extra (ej: lavandería).
+  - **Atributos**: Nombre, precio.
+- **`HotelGUI`**: Interfaz gráfica (no detallada en lógica).
+
+---
+
+#### **2. Enumeraciones (Tipos Especiales)**
+- **`TipoHabitacion`**: Categorías de habitaciones.  
+  Valores: `INDIVIDUAL`, `DOBLE`, `SUITE`, `PRESIDENCIAL`.
+- **`EstadoHabitacion`**: Estados posibles.  
+  Valores: `DISPONIBLE`, `OCUPADA`, `MANTENIMIENTO`.
+- **`MetodoPago`**: Formas de pago.  
+  Valores: `EFECTIVO`, `CARGO_HABITACION`.
+
+---
+
+#### **3. Relaciones entre Clases (Flechas y Multiplicidad)**
+Las flechas indican **asociaciones** y los números (**1**, **\***) definen **multiplicidad**:
+- **`SistemaHotel` → `Habitacion`**  
+  Relación: **1 a \*** (1 sistema gestiona *muchas* habitaciones).  
+  ![Ejemplo: SistemaHotel --(*)-> Habitacion]
+- **`SistemaHotel` → `Huesped`**  
+  Relación: **1 a \*** (1 sistema registra *muchos* huéspedes).
+- **`SistemaHotel` → `Reserva`**  
+  Relación: **1 a \*** (1 sistema maneja *muchas* reservas).
+- **`Huesped` → `Reserva`**  
+  Relación: **1 a \*** (1 huésped puede tener *muchas* reservas en su historial).
+- **`Reserva` → `ServicioAdicional`**  
+  Relación: **1 a \*** (1 reserva puede incluir *muchos* servicios).
+- **`Reserva` → `Factura`**  
+  Relación: **1 a 1** (1 reserva genera *1 factura*).  
+  - **Composición (diamante negro ◈)**: La factura no existe sin la reserva.
+- **`Reserva` → `Habitacion`**  
+  Relación: **\* a 1** (*Muchas* reservas pueden asociarse a *1* habitación en diferentes fechas).
+
+---
+
+#### **4. Herencia**
+- **No hay herencia** en este diagrama.  
+  Todas las clases son independientes (no usa herencia como "extends").
+
+---
+
+#### **5. Constructores (Inferidos)**
+Los constructores no están explícitos en UML, pero se deducen de los atributos:
+- **`Huesped`**:  
+  `Huesped(String id, String nombre, String documento)`
+- **`Habitacion`**:  
+  `Habitacion(String numero, TipoHabitacion tipo, double precioBase)`
+- **`Reserva`**:  
+  `Reserva(String codigo, Date fechaInicio, Date fechaFin, Habitacion habitacion)`
+- **`ServicioAdicional`**:  
+  `ServicioAdicional(String nombre, double precio)`
+
+---
+
+### Resumen de Claves
+| **Elemento**         | **Significado**                                                                 |
+|-----------------------|---------------------------------------------------------------------------------|
+| **Flechas**          | Asociaciones entre clases (ej: `Reserva` usa `Factura`).                        |
+| **1**                | "Un/a" (ej: 1 reserva → 1 factura).                                            |
+| **\***               | "Muchos/as" (ej: 1 huésped → * reservas).                                      |
+| **Diamante negro**   | Composición (la vida del objeto depende de otro, ej: `Factura` depende de `Reserva`). |
+| **Sin flechas**      | Clases sin relación directa (ej: `HotelGUI` no interactúa con `Factura`).       |
+| **Enumeraciones**    | Restricciones de valores (ej: `TipoHabitacion` solo permite 4 opciones).        |
+
+### ¿Dónde Están los "1" y "*" en el Diagrama?
+Ejemplos claros:
+- `Huesped 1 —————— * Reserva` → 1 huésped tiene *muchas* reservas.
+- `Reserva * —————— 1 Habitacion` → *Muchas* reservas pueden ser para 1 habitación (en diferentes momentos).
